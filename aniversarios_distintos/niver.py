@@ -40,7 +40,21 @@ def prob_nivers(num_pessoas=0):
     return probabilidade
 
 if __name__ == "__main__":
-    print "probailidade em..."
-    for r in xrange(0, 368):
-        print "%d pessoas:" % r
-        print "\t %s" % str(prob_nivers(r))
+    formatador = '{0:.600f}'
+    print "probailidade em...\n"
+    for r in xrange(0, 360):
+        # imprime apenas 36 resultados, de 10 em 10.
+        if r % 10 == 0:
+            print "%d pessoas: " % r
+            print "\n"
+            print "    %s" % formatador.format(prob_nivers(r))
+            print "\n"
+            print "\n"
+
+    # imprime os resultados finais
+    for r in xrange(361, 368):
+            print "%d pessoas: " % r
+            print "\n"
+            print "    %s" % formatador.format(prob_nivers(r))
+            print "\n"
+            print "\n"
